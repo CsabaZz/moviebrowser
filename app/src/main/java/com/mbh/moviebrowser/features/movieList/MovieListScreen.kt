@@ -47,7 +47,9 @@ fun MovieListScreenUI(movies: List<Movie>, onDetailsClicked: (Movie) -> Unit) {
         Text(
             text = "Movie List",
             style = MaterialTheme.typography.labelSmall,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onSurface,
+            modifier = Modifier
+                .padding(horizontal = 16.dp)
         )
         LazyColumn(
             modifier = Modifier.fillMaxWidth()
@@ -102,13 +104,13 @@ private fun MovieListItem(
             Text(
                 text = movie.title,
                 style = MaterialTheme.typography.headlineMedium,
-                color = Color.White,
+                color = MaterialTheme.colorScheme.onSurface,
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = movie.genres,
                 style = MaterialTheme.typography.bodyLarge,
-                color = Color.White,
+                color = MaterialTheme.colorScheme.onSurface,
             )
             Spacer(modifier = Modifier.height(8.dp))
             LinearProgressIndicator(progress = movie.rating / 10.0f, modifier = Modifier.fillMaxWidth())

@@ -73,13 +73,13 @@ fun MovieDetailsScreenUI(
         Text(
             text = movie.title,
             style = MaterialTheme.typography.headlineMedium,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onSurface,
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = movie.overview ?: "",
             style = MaterialTheme.typography.bodyLarge,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onSurface,
         )
     }
 }
