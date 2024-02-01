@@ -13,7 +13,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -52,9 +54,10 @@ fun MovieListScreenUI(movies: List<Movie>, onDetailsClicked: (Movie) -> Unit) {
                 .padding(horizontal = 16.dp)
         )
         LazyColumn(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            state = rememberLazyListState()
         ) {
-            items(movies) { item ->
+            items(items = movies, key = { it.id }) { item ->
                 MovieListItem(
                     movie = item,
                     onDetailsClicked,
@@ -113,7 +116,7 @@ private fun MovieListItem(
                 color = MaterialTheme.colorScheme.onSurface,
             )
             Spacer(modifier = Modifier.height(8.dp))
-            LinearProgressIndicator(progress = movie.rating / 10.0f, modifier = Modifier.fillMaxWidth())
+            LinearProgressIndicator(progress = remember { movie.rating / 10.0f }, modifier = Modifier.fillMaxWidth())
         }
     }
 }
