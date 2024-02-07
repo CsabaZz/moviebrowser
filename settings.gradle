@@ -1,2 +1,13 @@
 rootProject.name = "MovieBrowser"
+
 include ':app'
+
+// Core
+include ':core:data'
+include ':core:backend'
+include ':core:common-ui'
+include ':core:repository'
+
+// Pages
+include ':page:landing-page'
+include ':page:detail-page'

@@ -11,11 +11,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.mbh.moviebrowser.features.movieDetails.MovieDetailsScreen
-import com.mbh.moviebrowser.features.movieDetails.MovieDetailsViewModel
-import com.mbh.moviebrowser.features.movieList.MovieListScreen
-import com.mbh.moviebrowser.features.movieList.MovieListViewModel
-import com.mbh.moviebrowser.repository.IMoviesRepository
+import com.mbh.moviebrowser.di.DaggerMainActivityComponent
+import com.zappyware.moviebrowser.page.detail.MovieDetailsScreen
+import com.zappyware.moviebrowser.page.detail.MovieDetailsViewModel
+import com.zappyware.moviebrowser.page.landing.MovieListScreen
+import com.zappyware.moviebrowser.page.landing.MovieListViewModel
+import com.zappyware.moviebrowser.repository.IMoviesRepository
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

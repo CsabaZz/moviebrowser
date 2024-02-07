@@ -1,7 +1,7 @@
 package com.mbh.moviebrowser.di
 
-import com.mbh.moviebrowser.repository.IMoviesRepository
-import com.mbh.moviebrowser.repository.MoviesRepository
+import com.zappyware.moviebrowser.repository.IMoviesRepository
+import com.zappyware.moviebrowser.repository.MoviesRepository
 import dagger.Binds
 import dagger.Module
 

@@ -3,10 +3,10 @@ package com.mbh.moviebrowser.di
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.mbh.moviebrowser.network.INetworkService
-import com.mbh.moviebrowser.network.tmdb.TmdbService
-import com.mbh.moviebrowser.util.body
-import com.mbh.moviebrowser.util.isDebuggable
+import com.zappyware.moviebrowser.network.INetworkService
+import com.zappyware.moviebrowser.network.tmdb.TmdbService
+import com.zappyware.moviebrowser.util.body
+import com.zappyware.moviebrowser.util.isDebuggable
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -16,6 +16,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 class ProvideModule {
+
+    private val FAKE_BASE_URL = "https://google.com"
 
     @Provides
     fun provideOkHttpClient(context: Context): OkHttpClient = OkHttpClient.Builder()
@@ -38,7 +40,7 @@ class ProvideModule {
         Retrofit.Builder()
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("https://google.com")
+            .baseUrl(FAKE_BASE_URL)
             .build()
 
     @Provides
